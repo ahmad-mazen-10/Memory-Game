@@ -1,19 +1,19 @@
 let startGame = document.querySelector('.start-screen span');
 
-// startGame.onclick = () => {
-//     let name = prompt('What your Name');
-//     if (name == null || name == "") {
-//         alert('Write your Name متبقاش رخم ')
-//         let name = prompt('What your Name');
-//         if (name == null || name == "") {
-//             alert('😏 ده انت رخم');
-//             document.querySelector('.name span').innerHTML = 'الرخم';
-//         }
-//     } else {
-//         document.querySelector('.name span').innerHTML = 'name';
-//     }
+startGame.onclick = () => {
+    let name = prompt('What your Name');
+    if (name == null || name == "") {
+        alert('Write your Name متبقاش رخم ')
+        let name = prompt('What your Name');
+        if (name == null || name == "") {
+            alert('😏 ده انت رخم');
+            document.querySelector('.name span').innerHTML = 'الرخم';
+        }
+    } else {
+        document.querySelector('.name span').innerHTML = 'name';
+    }
      document.querySelector('.start-screen').remove();
-// };
+ };
 
 
 let duration = 1000;
