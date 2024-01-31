@@ -10,7 +10,7 @@ startGame.onclick = () => {
             document.querySelector('.name span').innerHTML = 'الرخم';
         }
     } else {
-        document.querySelector('.name span').innerHTML = 'name';
+        document.querySelector('.name span').innerHTML = `${name}`;
     }
      document.querySelector('.start-screen').remove();
  };
