@@ -1,0 +1,113 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.start-screen{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index:2;
+    background-color: rgba(179, 172, 26, 0.9);
+}
+.start-screen span{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform:translate(-50%,-50%);
+    background-color: darkolivegreen;
+    color: #fff;
+    padding: 15px 25px;
+    font-size: 30px;
+    text-align: center;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+
+.info{
+    width: 90%;
+    margin: 20px auto 0;
+    background-color: #f6f6f6;
+    padding: 20px;
+    font-size: 24px;
+    overflow: hidden;
+    border: 2px solid #08497e;
+}
+.info .name{
+    float: left;
+    width: 50%;
+}
+.info .tries{
+    float: right;
+    width: 50%;
+    text-align: right;
+}
+
+
+/* game */
+.game{
+    display: flex;
+    width: 60%;
+    flex-wrap: wrap ;
+    margin: 20px auto;
+}
+.game.no-clicking{
+pointer-events: none;
+}
+
+.game .game-block{
+    height: 200px;
+    transition: transform .5s;
+    cursor: pointer;
+    position: relative;
+    flex: 1 0 200px;
+    margin: 0 10px 20px;
+  transform-style: preserve-3d;
+}
+.game .game-block .front{
+    background-color: #222;
+    line-height: 200px;
+}
+.game .game-block .front::before{
+    content: '⚠️';
+    color: #ddcc2c;
+    font-size: 120px;
+    font-weight: bold;
+}
+
+.game .game-block .back{
+    background-color: #2f4c8a;
+    transform: rotateY(180deg);
+}
+.game .game-block .back img{
+    width: 140px;
+    height: 140px;
+    margin-top: 30px;
+}
+.game .game-block .face{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    backface-visibility: hidden;
+    border: 5px solid #08497e;
+}
+ .game .game-block .face.front {
+     backface-visibility: hidden;
+     } 
+.game .game-block .front.is-flipped {
+  backface-visibility: hidden;
+}
+
+.game .game-block.is-flipped,
+.game .game-block.matched{
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    pointer-events: none;
+}
